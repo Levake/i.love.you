@@ -134,7 +134,7 @@ var onclick = function onclick()
   button2.style.display = 'flex';
   
   var audio = new Audio();
-  audio.src = 'misuc/music.mp3';
+  audio.src = 'Misuc/music.mp3';
   audio.play();
   
   next();
