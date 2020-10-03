@@ -1,11 +1,15 @@
-'use strict';
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+function _classCallCheck(instance, Constructor) 
+{ 
+		if (!(instance instanceof Constructor))
+		{ 
+				throw new TypeError("Cannot call a class as a function");
+		} 
+}
 // ——————————————————————————————————————————————————
 // TextScramble
 // ——————————————————————————————————————————————————
 
+		var audio = new Audio();
 var TextScramble = function () {
   function TextScramble(el) {
     _classCallCheck(this, TextScramble);
@@ -76,7 +80,6 @@ var TextScramble = function () {
 
   return TextScramble;
 }();
-
 // ——————————————————————————————————————————————————
 // Example
 // ——————————————————————————————————————————————————
@@ -103,39 +106,131 @@ var phrases = ['Я 🙂'
 ,'Вроде расстояние, 🌏'
 ,'но всё равно я чувствую, 💕'
 ,'тебя рядом. 😉'
-,'Ну, а это сообщение, 💌'
-,'будет повторяться, 🔄'
-,'бесконечно. 🔃'
-,'А всё потому что... ❣️'];
+,'Обожаю'];
 
 var el = document.querySelector('.text');
 var fx = new TextScramble(el);
 
 var counter = 0;
 var next = function next() {
-  fx.setText(phrases[counter]).then(function () {
-    setTimeout(next, 2500);
+  if(!(counter == phrases.length - 1))
+		{
+				fx.setText(phrases[counter]).then(function () {
+    
+    setTimeout(next, 3500);
   });
-  counter = (counter + 1) % phrases.length;
+				
+										counter = (counter + 1) % phrases.length;
+		}
+		else
+		{
+				
+				let button1 = document.getElementById("div1");
+  button1.style.display = 'none';
+						
+						let button2 = document.getElementById("div2");
+  button2.style.display = 'none';
+				
+				let message1 = document.getElementById("message1");
+  message1.style.display = 'flex';
+				
+				let message2 = document.getElementById("message2");
+  message2.style.display = 'flex';
+				
+				let message3 = document.getElementById("message3");
+  message3.style.display = 'flex';
+				
+				let message4 = document.getElementById("message4");
+  message4.style.display = 'flex';
+				
+				let message5 = document.getElementById("message5");
+  message5.style.display = 'flex';
+				
+				let message6 = document.getElementById("message6");
+  message6.style.display = 'flex';
+				
+				let message7 = document.getElementById("message7");
+  message7.style.display = 'flex';
+				
+				let message8 = document.getElementById("message8");
+  message8.style.display = 'flex';
+				
+				let message9 = document.getElementById("message9");
+  message9.style.display = 'flex';
+				
+				let message10 = document.getElementById("message10");
+  message10.style.display = 'flex';
+				
+				let message11 = document.getElementById("message11");
+  message11.style.display = 'flex';
+				
+				let message12 = document.getElementById("message12");
+  message12.style.display = 'flex';
+				
+				let message13 = document.getElementById("message13");
+  message13.style.display = 'flex';
+				
+				let message14 = document.getElementById("message14");
+  message14.style.display = 'flex';
+				
+				let message15 = document.getElementById("message15");
+  message15.style.display = 'flex';
+				
+		}
 };
 
-var onclick = function onclick() 
+var playmusic = function playmusic(val)
 {
-  let button = document.getElementById("button");
-  button.style.display = 'none';
-  
-  let button4 = document.getElementById("button2");
+						audio.pause();
+		
+		if(val == 1)
+		{
+				audio.src = 'Misuc/music.mp3'; // это локалка, Misuc для гитхаба
+ audio.play();
+				
+				setTimeout(function()
+				{
+						let button4 = document.getElementById("button2");
   button4.style.display = 'none';
   
   let button1 = document.getElementById("div1");
   button1.style.display = 'flex';
-  
-  let button2 = document.getElementById("div2");
+						
+						let button2 = document.getElementById("div2");
   button2.style.display = 'flex';
-  
-  var audio = new Audio();
-  audio.src = 'Misuc/music.mp3';
-  audio.play();
-  
-  next();
+				next();
+						
+				}, 6000);
+		}
+		
+		if(val == 2)
+		{
+				audio.src = 'Misuc/music2.mp3'; // это локалка, Misuc для гитхаба
+ audio.play();
+		}
+		
+		if(val == 3)
+		{
+				audio.src = 'Misuc/music3.mp3'; // это локалка, Misuc для гитхаба
+ audio.play();
+		}
+		
+		if(val == 4)
+		{
+				audio.src = 'Misuc/music4.mp3'; // это локалка, Misuc для гитхаба
+ audio.play();
+		}
+		
+		if(val == 5)
+		{
+				audio.src = 'Misuc/music5.mp3'; // это локалка, Misuc для гитхаба
+ audio.play();
+		}
+		
+		if(val == 6)
+		{
+				audio.src = 'Misuc/music6.mp3'; // это локалка, Misuc для гитхаба
+ audio.play();
+		}
+		
 }
